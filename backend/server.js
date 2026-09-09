@@ -1,17 +1,46 @@
-const express = require('express'); //Importa o Express instalado
+const express = require('express');
+require('dotenv').config();
 
-const app = express(); // Aplicacao criada, app passa a representar o servidor Express.
+const authRoutes = require('./routes/auth');
+const ativosRoutes = require('./routes/ativos');
+const cadastrosRoutes = require('./routes/cadastros');
+const dashboardRoutes = require('./routes/dashboard');
 
-const PORT = 3000; // Porta definida, o servidor ficara esperando requisicoes na porta 3000.
+const app = express();
+const PORT = Number(process.env.PORT || 3000);
 
-app.get('/', (req, res) => { //get responde a uma requisicao HTTP GET. / representa a rota principal
-    res.send('API do Inventário Patrimonial funcionando!');
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(204);
+    }
+
+    next();
 });
 
-app.get('/ativos', (req, res) => {
-    res.send('Lista de ativos');
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.json({
+        sistema: 'Inventário Patrimonial',
+        api: 'funcionando'
+    });
+});
+
+app.use('/api/auth', authRoutes);
+app.use('/api/ativos', ativosRoutes);
+app.use('/api/cadastros', cadastrosRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+
+app.use((req, res) => {
+    res.status(404).json({
+        mensagem: 'Rota não encontrada'
+    });
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

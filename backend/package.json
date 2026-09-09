@@ -1,17 +1,16 @@
 {
-  "name": "backend",
+  "name": "inventario-patrimonial-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API do sistema de inventário patrimonial",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "create-admin": "node scripts/criar-admin.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "express": "^5.2.1",
-    "mysql2": "^3.24.3"
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.5"
   }
 }

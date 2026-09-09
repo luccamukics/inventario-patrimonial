@@ -1,0 +1,432 @@
+:root {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2937;
+    background: #f4f6f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background:
+        radial-gradient(circle at top right, rgba(44, 94, 136, .14), transparent 35%),
+        #f4f6f8;
+}
+
+.login-card {
+    width: min(420px, 100%);
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 36px;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, .08);
+}
+
+.brand-mark {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: #16293b;
+    color: white;
+}
+
+.login-card h1 {
+    margin: 22px 0 6px;
+}
+
+.login-card p {
+    margin: 0 0 24px;
+    color: #667085;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    border: 1px solid #d7dde5;
+    border-radius: 9px;
+    padding: 10px 12px;
+    background: white;
+    color: #1f2937;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #597996;
+    box-shadow: 0 0 0 3px rgba(89, 121, 150, .12);
+}
+
+.login-card label + label {
+    margin-top: 16px;
+}
+
+.primary,
+.secondary,
+.ghost {
+    border: 0;
+    border-radius: 9px;
+    padding: 10px 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.primary {
+    background: #16293b;
+    color: white;
+}
+
+.secondary {
+    background: white;
+    color: #263a4d;
+    border: 1px solid #d8dee6;
+}
+
+.ghost {
+    background: transparent;
+    color: #546273;
+}
+
+.full {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.alert {
+    padding: 11px 14px;
+    border-radius: 9px;
+    margin: 14px 0;
+    font-size: 14px;
+}
+
+.alert.error {
+    background: #fff1f2;
+    color: #9f1239;
+    border: 1px solid #fecdd3;
+}
+
+.alert.success {
+    background: #ecfdf3;
+    color: #027a48;
+    border: 1px solid #abefc6;
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+}
+
+.sidebar {
+    background: #142536;
+    color: white;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 0 7px 26px;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.brand strong,
+.brand span {
+    display: block;
+}
+
+.brand span {
+    font-size: 12px;
+    opacity: .65;
+}
+
+.sidebar-user {
+    margin-top: auto;
+    padding: 14px 8px;
+}
+
+.sidebar-user span,
+.sidebar-user small {
+    display: block;
+}
+
+.sidebar-user small {
+    color: #9fb0bf;
+    margin-top: 3px;
+}
+
+.sidebar-button {
+    color: #d8e2ea;
+    justify-content: flex-start;
+}
+
+.content {
+    padding: 30px;
+    min-width: 0;
+}
+
+.topbar,
+.panel-title,
+.table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar {
+    margin-bottom: 24px;
+}
+
+.topbar h1,
+.panel-title h2 {
+    margin: 0;
+}
+
+.topbar p,
+.panel-title p {
+    margin: 5px 0 0;
+    color: #667085;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 17px;
+}
+
+.metric-card span {
+    color: #667085;
+    font-size: 12px;
+}
+
+.metric-card strong {
+    display: block;
+    font-size: 28px;
+    margin-top: 8px;
+    color: #172b3d;
+}
+
+.panel {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.asset-form {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.form-submit {
+    align-self: end;
+    min-height: 41px;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 1fr 210px;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d7dde5;
+    border-radius: 9px;
+    padding-left: 11px;
+    background: white;
+}
+
+.search-box input {
+    border: 0;
+    box-shadow: none;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 13px 12px;
+    border-bottom: 1px solid #edf0f3;
+    vertical-align: middle;
+}
+
+th {
+    color: #667085;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+td small {
+    display: block;
+    color: #7b8794;
+    margin-top: 4px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #eef2f6;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.badge.disponivel {
+    background: #ecfdf3;
+    color: #027a48;
+}
+
+.badge.em-uso {
+    background: #eff8ff;
+    color: #175cd3;
+}
+
+.badge.manutencao {
+    background: #fffaeb;
+    color: #b54708;
+}
+
+.actions {
+    display: flex;
+    gap: 7px;
+}
+
+.icon-button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #dde3ea;
+    border-radius: 8px;
+    background: white;
+    display: grid;
+    place-items: center;
+    color: #344054;
+}
+
+.icon-button.danger {
+    color: #b42318;
+}
+
+.empty {
+    text-align: center;
+    color: #7b8794;
+    padding: 32px;
+}
+
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .asset-form {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 820px) {
+    .app-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .brand {
+        border: 0;
+        padding: 0;
+    }
+
+    .sidebar-user {
+        margin: 0 0 0 auto;
+    }
+
+    .content {
+        padding: 18px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .asset-form {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+}
